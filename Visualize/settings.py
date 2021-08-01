@@ -28,7 +28,8 @@ INSTALLED_APPS = [
     'powerDjango',
     'crispy_forms',
     'rest_framework',
-    'corsheaders'
+    'corsheaders',
+    'api'
 
 ]
 
