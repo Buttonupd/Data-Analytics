@@ -28,13 +28,12 @@ INSTALLED_APPS = [
     'powerDjango',
     'crispy_forms',
     'rest_framework',
-    'cors-headers'
+    'corsheaders'
 
 ]
-CORS_ORIGIN_WHITELIST = (
-    'localhost:8000/',
-    'data-bore-dashboard.herokuapp.com/',
-)
+
+CORS_ORIGIN_ALLOW_ALL = True
+
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
