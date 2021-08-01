@@ -1,0 +1,1 @@
+web:gunicorn Visualize.wsgi --log-file -
