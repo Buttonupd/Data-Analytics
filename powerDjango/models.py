@@ -18,11 +18,11 @@ class Sentiment(models.Model):
 		('Europe', 'Europe'),
 		('Japan', 'Japan'),
 		('South Korea', 'South Korea'),
-		('Kenya', 'Kenya'),
 	)
+	
 	movie 		= models.ForeignKey(Movie, on_delete=models.CASCADE)
 	reviews 	= models.TextField()
-	results 	= models.PositiveIntegerField(null=True)
+	results 	= models.IntegerField()
 	gender 		= models.CharField(max_length=6, choices=GENDER_CHOICES)
 	age 		= models.IntegerField()
 	country		= models.CharField(max_length=24, choices=COUNTRY_CHOICES)
@@ -31,4 +31,4 @@ class Sentiment(models.Model):
 
 	class Meta:
 		ordering = ['-timestamp', '-updated']
-	
+

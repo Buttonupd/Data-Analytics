@@ -1,11 +1,10 @@
-from operator import ge
 from django.shortcuts import render
-import json
 
-from numpy.lib.utils import safe_eval
 from .forms import SentimentForm
 from .models import Movie, Sentiment
+
 from .vectorizer import vect
+
 import os
 import pickle
 import numpy as np
@@ -35,10 +34,8 @@ def classify_review(request):
 		country = form.cleaned_data.get("country")
 		movie = form.cleaned_data.get("movie")
 		my_results, my_proba = classify(reviews)
-		returned_data = int(my_proba), my_results
-		sentiment = Sentiment(reviews=reviews, gender=gender,age=age, country=country,
-		movie=movie)
-		sentiment.save()
+		# sentiment = Sentiment(reviews=reviews, results=my_results, probabilities=round(my_proba * 100, 2))
+		# sentiment.save()
 
 		context = {
 			'result': my_results,
@@ -49,8 +46,7 @@ def classify_review(request):
 			'country': country,
 			'movie': movie,
 		}
-		
-		return render(request, "powerDjango/predictions.html",  context)
+		return render(request, "powerDjango/predictions.html", context)
 	context = {
 		"form": form,
 	}

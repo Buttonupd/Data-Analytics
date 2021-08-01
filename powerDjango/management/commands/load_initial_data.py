@@ -18,7 +18,7 @@ db_name = DATABASES['default']['NAME']
 
 
 def load_seed_data():
-	with open(os.path.join('datasets', 'movie_and_demographic_data.csv'), 'r') as f:
+	with open(os.path.join('datasets', 'data.xlsx'), 'r') as f:
 		next(f)
 		csv_reader = csv.reader(f)
 		for row in csv_reader:
