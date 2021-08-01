@@ -27,11 +27,19 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'powerDjango',
     'crispy_forms',
+    'rest_framework',
+    'cors-headers'
 
 ]
+CORS_ORIGIN_WHITELIST = (
+    'localhost:8000/',
+    'data-bore-dashboard.herokuapp.com/',
+)
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -43,6 +51,12 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'Visualize.urls'
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ]
+}
 
 TEMPLATES = [
     {
