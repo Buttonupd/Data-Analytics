@@ -65,7 +65,7 @@ vect = HashingVectorizer(decode_error='ignore',
 For more information on logistic regression you can research wikipedia and YouTube."""
 clf = SGDClassifier(loss='log', random_state=1, max_iter=1)
 
-doc_stream = stream_docs(path='movie_data.csv')
+doc_stream = stream_docs(path='movie_data.xlsx')
 
 # Now we can finally train our model
 pbar = pyprind.ProgBar(45)

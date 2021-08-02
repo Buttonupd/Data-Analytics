@@ -44,11 +44,12 @@ INSTALLED_APPS = [
 
 ]
 
-CORS_ORIGIN_WHITELIST = [
-    'http://localhost:8000',
-    'https://powerbi-analytics.herokuapp.com',
-]
+#CORS_ORIGIN_WHITELIST = [
+    #'http://localhost:8000',
+    #'https://powerbi-analytics.herokuapp.com',
+#]
 
+CORS_ORIGIN_ALLOW_ALL = True
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 

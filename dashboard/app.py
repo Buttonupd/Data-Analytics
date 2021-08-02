@@ -5,13 +5,14 @@ Django REST API (Data-Bore), simply set the environment variable API_IS_UP=False
 use the movie_and_demographic_data.csv for its pandas DataFrame.  And will allow the user to run 
 the Dash up in a stand-alone fashion."""
 
+from distutils.version import StrictVersion
 import os
-
+import bz2
 from dotenv import load_dotenv
 
 import requests
 import json
-
+from urllib.request import urlopen, Request
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
@@ -65,7 +66,7 @@ app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 
 server = app.server
 
-environment = os.getenv('FLASK_ENV', 'production')
+environment = os.getenv('FLASK_ENV', 'development')
 
 api_is_up = os.getenv('API_IS_UP', 'True')
 
@@ -105,8 +106,7 @@ def get_sentiment_data(env=None):
 	r = client.post(URL, data=login_data, headers=dict(Referer=URL))
 
 	results = []
-
-	sentiments = json.loads(r.text)
+	sentiments = json.loads(bz2.BZ2File(r.text)).read().decode()
 	df = pd.DataFrame(sentiments)
 	df = df.set_index(['id'])
 	for row in df['results']:
