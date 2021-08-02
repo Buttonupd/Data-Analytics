@@ -102,14 +102,14 @@ DEBUG = config('DEBUG', default=False, cast=bool)
 # DATABASES = {
 #        'default': {
 #         'ENGINE': 'mssql',
-#         'NAME': 'powerweb',
+#         'NAME': '',
 #         'USER': 'sa',
-#         'PASSWORD': 'saferthancovid19',
+#         'PASSWORD': '',
 #         'HOST': '127.0.0.1',
 #         'PORT': '1433',
 
 #         'OPTIONS': {
-#             'DRIVER': 'ODBC Driver 17 for SQL Server',
+#             'DRIVER',
 #             'unicode_results': True,
 #        },
 #        }
@@ -197,10 +197,10 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # EMAIL_USE_TLS=True
-# EMAIL_HOST='smtp.gmail.com'
-# EMAIL_PORT=587
-# EMAIL_HOST_USER='blogbuttonup@gmail.com'
-# EMAIL_HOST_PASSWORD='znteeiyactwnrlik'
+# EMAIL_HOST
+# EMAIL_PORT=
+# EMAIL_HOST_USER=''
+# EMAIL_HOST_PASSWORD=''
 
 # Configure Django App for Heroku.
 django_heroku.settings(locals())
