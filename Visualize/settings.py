@@ -30,6 +30,7 @@ STATICFILES_DIRS = (
 )
 
 INSTALLED_APPS = [
+    'django-jenkins',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -40,18 +41,20 @@ INSTALLED_APPS = [
     'crispy_forms',
     'rest_framework',
     'corsheaders',
-    'api'
-
+    'api',
 ]
 
-#CORS_ORIGIN_WHITELIST = [
-    #'http://localhost:8000',
-    #'https://powerbi-analytics.herokuapp.com',
-#]
-
-CORS_ORIGIN_ALLOW_ALL = True
+CORS_ORIGIN_ALLOW_ALL = config("CORS")
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+JENKINS_TASKS = (
+    'django_jenkins.tasks.run_pep8',
+    'django_jenkins.tasks.run_pyflakes',
+    'django_jenkins.tasks.run_jslint',
+    'django_jenkins.tasks.run_csslint',
+    'django_jenkins.tasks.run_sloccount'
+)
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
