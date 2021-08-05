@@ -26,7 +26,7 @@ node {
     // In this stage, you should first activate the virtual environment and then run through a pip install of the requirements file.
     stage ("Install Application Dependencies") {
         sh '''
-            . .env/bin/activate
+            . env/bin/activate
             pip install -r requirements.txt
             deactivate
            '''
@@ -37,7 +37,7 @@ node {
     // ready them for deployment.
     stage ("Collect Static files") {
         sh '''
-            . .env/bin/activate
+            . env/bin/activate
             python  manage.py collectstatic --noinput
             deactivate
            '''
@@ -50,7 +50,7 @@ node {
         def testsError = null
         try {
             sh '''
-                . .env/bin/activate
+                . env/bin/activate
                 python o manage.py jenkins
                 deactivate
                '''
