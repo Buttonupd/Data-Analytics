@@ -1,9 +1,8 @@
-FROM jupyter/scipy-notebook
+FROM python:3.9-alpine
 ENV PYTHONBUFFERED 1
 ENV PYTHONWRITEBYCODE=1
 WORKDIR /app
 # install psycopg2 dependencies
-
 RUN apk update \
     && apk add postgresql-dev gcc python3-dev musl-dev 
     

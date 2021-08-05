@@ -30,7 +30,7 @@ STATICFILES_DIRS = (
 )
 
 INSTALLED_APPS = [
-    'django-jenkins',
+    'django_jenkins',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -44,16 +44,14 @@ INSTALLED_APPS = [
     'api',
 ]
 
-CORS_ORIGIN_ALLOW_ALL = config("CORS")
+CORS_ORIGIN_ALLOW_ALL = True
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 JENKINS_TASKS = (
     'django_jenkins.tasks.run_pep8',
     'django_jenkins.tasks.run_pyflakes',
-    'django_jenkins.tasks.run_jslint',
-    'django_jenkins.tasks.run_csslint',
-    'django_jenkins.tasks.run_sloccount'
+  
 )
 
 MIDDLEWARE = [
