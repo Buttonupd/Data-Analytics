@@ -60,7 +60,7 @@ node {
     stage ('Env') {
         sh 
         '''
-        withEnv(['SECRET_KEY= props.SECRET_KEY)]
+        withEnv(['SECRET_KEY= 'SECRET_KEY')]
         '''
     }
     stage ("Collect Static files") {
