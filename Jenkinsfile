@@ -35,6 +35,29 @@ node {
     // Typically, django recommends that all the static assets such as images and css are to be collected to a single folder and
     // served separately outside the django application via apache or a CDN. This command will gather up all the static assets and
     // ready them for deployment.
+    
+    stage(“reading properties from properties file”) {
+    steps {
+        // Use a script block to do custom scripting
+        script {
+            def props = readProperties file: 'extravars.properties' 
+            env.SECRET_KEY = props.SECRET_KEY,
+            env.MODE = props.MODE,
+            env.ALLOWED_HOSTS = prop.ALLOWED_HOSTS,
+            env.DEBUG = props.DEBUG,
+            env.DB_NAME = props.DB_NAME,
+            env.DB_USER = props.DB_USER,
+            env.DB_PASSWORD = props.DB_PASSWORD,
+            env.DB_HOST = props.DB_HOST,
+            env.PORT = props.PORT,
+            env.DISABLE_COLLECTICSTATIC = props.DISABLE_COLLECTICSTATIC,
+            env.CORS = props.CORS
+            
+        }
+        echo "Done"
+    }
+}
+    
     stage ("Collect Static files") {
         sh '''
             . env/bin/activate
