@@ -4,7 +4,7 @@ ENV PYTHONWRITEBYCODE=1
 WORKDIR /app
 # install psycopg2 dependencies
 RUN apk update \
-    && apk add postgresql-dev gcc python3-dev musl-dev 
+    && apk add postgresql-dev gcc python3-dev musl-dev g++
     
 RUN pip install psycopg2-binary
 
