@@ -6,11 +6,11 @@
 node {
     // It's often recommended to run a django project from a virtual environment.
     // This way you can manage all of your depedencies without affecting the rest of your system.
-    def installed = fileExists 'bin/activate'
+    def installed = fileExists 'env/bin/activate'
 
     if (!installed) {
         stage("Install Python Virtual Enviroment") {
-            sh 'virtualenv --no-site-packages .'
+            sh 'virtualenv env'
         }
     }   
     
