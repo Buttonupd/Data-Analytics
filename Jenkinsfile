@@ -19,7 +19,7 @@ node {
     // pipeline project then you can replace this with the regular 'git url:' pipeline command.
     // The 'checkout scm' command will automatically pull down the code from the appropriate branch that triggered this build.
     stage ("Get Latest Code") {
-        checkout scm
+       checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs:[[credentialsId: '792d6be0-acfe-4e29ac03-301854a7a61a', url: 'https://github.com/Buttonupd/Data-Analytics.git']]])
     }
     
     // If you're using pip for your dependency management, you should create a requirements file to store a list of all depedencies.
