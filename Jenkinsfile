@@ -6,7 +6,7 @@
 node {
     // It's often recommended to run a django project from a virtual environment.
     // This way you can manage all of your depedencies without affecting the rest of your system.
-    def installed = fileExists 'env/bin/activate'
+    def installed = fileExists 'source env/bin/activate'
 
     if (!installed) {
         stage("Install Python Virtual Enviroment") {
@@ -26,7 +26,7 @@ node {
     // In this stage, you should first activate the virtual environment and then run through a pip install of the requirements file.
     stage ("Install Application Dependencies") {
         sh '''
-            env/bin/activate
+            source env/bin/activate
             pip install -r requirements.txt
             deactivate
            '''
@@ -37,7 +37,7 @@ node {
     // ready them for deployment.
     stage ("Collect Static files") {
         sh '''
-            env/bin/activate
+            source env/bin/activate
             python  manage.py collectstatic --noinput
             deactivate
            '''
@@ -50,7 +50,7 @@ node {
         def testsError = null
         try {
             sh '''
-                env/bin/activate
+                source env/bin/activate
                 python o manage.py jenkins
                 deactivate
                '''
