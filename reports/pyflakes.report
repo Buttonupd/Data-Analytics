@@ -1,0 +1,31 @@
+env/lib/python3.9/site-packages/django/contrib/messages/__init__.py:1:1 'from django.contrib.messages.api import *' used; unable to detect undefined names
+env/lib/python3.9/site-packages/django/contrib/messages/__init__.py:1:1 'django.contrib.messages.api.*' imported but unused
+env/lib/python3.9/site-packages/django/contrib/messages/__init__.py:2:1 'from django.contrib.messages.constants import *' used; unable to detect undefined names
+env/lib/python3.9/site-packages/django/contrib/messages/__init__.py:2:1 'django.contrib.messages.constants.*' imported but unused
+powerDjango/forms.py:2:1 'django.forms.ModelForm' imported but unused
+powerDjango/urls.py:1:1 'os.name' imported but unused
+powerDjango/urls.py:3:1 'from .views import *' used; unable to detect undefined names
+powerDjango/urls.py:8:16 'classify_review' may be undefined, or defined from star imports: [E] PYFLAKES:.views
+powerDjango/urls.py:9:19 'feedback' may be undefined, or defined from star imports: [E] PYFLAKES:.views
+powerDjango/tests.py:1:1 'django.test.TestCase' imported but unused
+powerDjango/management/commands/load_initial_data.py:42:10 f-string is missing placeholders
+env/lib/python3.9/site-packages/crispy_forms/templatetags/crispy_forms_tags.py:14:1 'from crispy_forms.templatetags.crispy_forms_filters import *' used; unable to detect undefined names
+env/lib/python3.9/site-packages/crispy_forms/templatetags/crispy_forms_tags.py:14:1 'crispy_forms.templatetags.crispy_forms_filters.*' imported but unused
+env/lib/python3.9/site-packages/rest_framework/apps.py:10:9 '.checks.pagination_system_check' imported but unused
+env/lib/python3.9/site-packages/rest_framework/serializers.py:51:1 'rest_framework.fields.DictField' imported but unused
+env/lib/python3.9/site-packages/rest_framework/serializers.py:51:1 'rest_framework.fields.MultipleChoiceField' imported but unused
+env/lib/python3.9/site-packages/rest_framework/serializers.py:51:1 'rest_framework.fields.NullBooleanField' imported but unused
+env/lib/python3.9/site-packages/rest_framework/serializers.py:51:1 'rest_framework.fields.RegexField' imported but unused
+env/lib/python3.9/site-packages/rest_framework/serializers.py:51:1 'rest_framework.fields.SerializerMethodField' imported but unused
+env/lib/python3.9/site-packages/rest_framework/serializers.py:58:1 'rest_framework.relations.ManyRelatedField' imported but unused
+env/lib/python3.9/site-packages/rest_framework/serializers.py:58:1 'rest_framework.relations.RelatedField' imported but unused
+env/lib/python3.9/site-packages/rest_framework/serializers.py:58:1 'rest_framework.relations.StringRelatedField' imported but unused
+env/lib/python3.9/site-packages/rest_framework/serializers.py:64:1 'rest_framework.fields.CurrentUserDefault' imported but unused
+env/lib/python3.9/site-packages/rest_framework/serializers.py:67:1 'rest_framework.relations.Hyperlink' imported but unused
+env/lib/python3.9/site-packages/rest_framework/schemas/__init__.py:26:1 '.coreapi.AutoSchema' imported but unused
+env/lib/python3.9/site-packages/rest_framework/schemas/__init__.py:26:1 '.coreapi.ManualSchema' imported but unused
+env/lib/python3.9/site-packages/rest_framework/schemas/__init__.py:26:1 '.coreapi.SchemaGenerator' imported but unused
+env/lib/python3.9/site-packages/rest_framework/schemas/__init__.py:27:1 '.inspectors.DefaultSchema' imported but unused
+api/models.py:1:1 'django.db.models' imported but unused
+api/admin.py:1:1 'django.contrib.admin' imported but unused
+api/tests.py:1:1 'django.test.TestCase' imported but unused

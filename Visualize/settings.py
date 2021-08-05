@@ -30,7 +30,7 @@ STATICFILES_DIRS = (
 )
 
 INSTALLED_APPS = [
-    'django-jenkins',
+    'django_jenkins',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -44,16 +44,14 @@ INSTALLED_APPS = [
     'api',
 ]
 
-CORS_ORIGIN_ALLOW_ALL = config("CORS")
+CORS_ORIGIN_ALLOW_ALL = True
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 JENKINS_TASKS = (
     'django_jenkins.tasks.run_pep8',
     'django_jenkins.tasks.run_pyflakes',
-    'django_jenkins.tasks.run_jslint',
-    'django_jenkins.tasks.run_csslint',
-    'django_jenkins.tasks.run_sloccount'
+  
 )
 
 MIDDLEWARE = [
@@ -97,9 +95,9 @@ WSGI_APPLICATION = 'Visualize.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-MODE=config("MODE", default="dev")
-SECRET_KEY = config('SECRET_KEY')
-DEBUG = config('DEBUG', default=False, cast=bool)
+MODE='dev'
+SECRET_KEY = 'Secret'
+DEBUG = True
 # development
 
 # DATABASES = {
@@ -122,11 +120,11 @@ if config('MODE')=="dev":
    DATABASES = {
        'default': {
            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-           'NAME': config('DB_NAME'),
-           'USER': config('DB_USER'),
-           'PASSWORD': config('DB_PASSWORD'),
-           'HOST': config('DB_HOST'),
-           'PORT': config('PORT'),
+           'NAME': 'test',
+           'USER': 'test',
+           'PASSWORD': 'test',
+           'HOST': 'test',
+           'PORT': '5432'
        }
 
    }
