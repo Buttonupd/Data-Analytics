@@ -95,9 +95,9 @@ WSGI_APPLICATION = 'Visualize.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-MODE=config("MODE", default="dev")
-SECRET_KEY = config('SECRET_KEY')
-DEBUG = config('DEBUG', default=False, cast=bool)
+MODE='dev'
+SECRET_KEY = 'Secret'
+DEBUG = True
 # development
 
 # DATABASES = {
@@ -120,11 +120,11 @@ if config('MODE')=="dev":
    DATABASES = {
        'default': {
            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-           'NAME': config('DB_NAME'),
-           'USER': config('DB_USER'),
-           'PASSWORD': config('DB_PASSWORD'),
-           'HOST': config('DB_HOST'),
-           'PORT': config('PORT'),
+           'NAME': 'test'
+           'USER': 'test'
+           'PASSWORD': 'test'
+           'HOST': 'test'
+           'PORT': '5432'
        }
 
    }
